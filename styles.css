@@ -1,35 +1,56 @@
 /*Estilos*/
 :root {
-    --color-crema: #395b0b;
-    --color-ocre: #115b0b;
-    --color-mostaza:#5A771C;
+    --color-carbon:#263A29;
+    --color-verde-oliva:#41644A;
+    --color-mostaza: #C49A4A;
 
-    --color-carbon: #aaf4a4;
-    --color-verde-oliva: #ede46d;
-    --color-taupe: #b7ed6d;
+    --color-crema:  #F7F4ED;
+    --color-ocre:#E8E1D5;
+    --color-taupe:#6C806D;
+    --color-texto: #333A34;
+    --color-blanco: #FFFFFF;
 }
 
-h5  {
-    color: var(--color-taupe);
-    font-size: 1rem;
-    line-height: 1.6;
+body {
+    font-family: "Inter", sans-serif;
+    color: var(--color-texto);
+    background-color: var(--color-crema);
 }
-h1, h2, h3, h4 {
+
+h1 {
+    font-family: "Abril Fatface", serif;
     color: var(--color-verde-oliva);
-    font-size: 2.5rem;
-    line-height: 1.4;
-    
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    line-height: 1.1;
 }
+
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Inter", sans-serif;
+    color: var(--color-verde-oliva);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
 p {
-    color: var(--color-carbon);
+    color: var(--color-texto);
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 /* NAVBAR */
 
     
 .navbar-custom {
     background-color: var(--color-crema);
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    z-index: 1000; 
     padding: 10px 0;
     box-shadow: 0 3px 15px rgba(43, 43, 43, 0.08);
 }
@@ -65,39 +86,50 @@ html {
 }
 
 
-.btn-primary {
-    background-color:var(--color-verde-oliva);
-    border: 10px;
-    padding: 4px 15px;
-    color: var(--color-crema);
-    transform: translateX(200px);
-}
-.btn-primary:hover {
-    color: var(--color-verde-oliva);
-    border-color: var(--color-verde-oliva);
-    border: 10px;
-    background-color: var(--color-crema);
-}
-
+.btn-primary,
 .btn-secondary {
-    background-color:var(--color-carbon);
-    border:none;
-    font-size: 1.05rem;
-    padding: 4px 15px;
-    margin-right: 15px;
-    margin-bottom: 12px;
-    color: var(--color-crema);
+    background-color: var(--color-verde-oliva);
+    border: 2px solid var(--color-verde-oliva);
 
+    color: white;
+
+    padding: 9px 20px;
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
 }
-.btn-terciary {
-    background: transparent;
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    background-color: var(--color-carbon);
     border-color: var(--color-carbon);
-    margin-bottom: 12px;
-    font-size: 1.05rem;
-    padding: 4px 15px;
-    color: var(--color-carbon);
+    color: white;
 
+    transform: translateY(-2px);
 }
+
+.btn-terciary {
+    background-color: transparent;
+
+    border: 2px solid var(--color-verde-oliva);
+
+    color: var(--color-verde-oliva);
+
+    padding: 9px 20px;
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.btn-terciary:hover {
+    background-color: var(--color-verde-oliva);
+    color: white;
+}
+
 /*Boton redes sociales */
 .redes-sociales {
     display: flex;
@@ -183,7 +215,7 @@ html {
     /* Estilos para la sección de inicio */
     #inicio {
        /* text-align: center;*/
-        padding: 50px 20px;
+        padding: 70px 20px;
         background-color: var(--color-crema);
         
 
@@ -191,12 +223,12 @@ html {
 
     .foto-principal {
         width: 65%;
-        height: 95%;
+        height: auto;
         margin: 50px;
         object-fit: cover;
         border-radius: 5%;
         border: 7px solid var(--color-mostaza);
-        transform: translateY(-65px);
+        
     }
 
     #tecnologias {
@@ -332,19 +364,23 @@ html {
 
 
 .tech-card {
-    background-color: var(--color-crema);
+    background-color: var(--color-blanco);
     padding: 30px;
     border-radius: 15px;
     height: 100%;
 
-    box-shadow: 0 5px 15px rgba(43, 43, 43, 0.08);
+    border: 1px solid rgba(65, 100, 74, 0.12);
+
+    box-shadow: 0 5px 15px rgba(38, 58, 41, 0.08);
 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .tech-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(43, 43, 43, 0.15);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(38, 58, 41, 0.14);
 }
+
 .tech-list {  /*Modifica radio herramientas*/
     display: flex;
     flex-wrap: wrap;
@@ -354,10 +390,18 @@ html {
 } 
 .tech-list span {
     display: inline-block;
-    padding: 7px 10px; 
-    border: 1px solid var(--color-mostaza);
+
+    padding: 7px 12px;
+
+    background-color: rgba(65, 100, 74, 0.08);
+
+    border: 1px solid var(--color-verde-oliva);
     border-radius: 50px;
-    font-size: 0.9rem;
+
+    color: var(--color-verde-oliva);
+
+    font-size: 0.85rem;
+    font-weight: 500;
 }
 
  /* Estilos para la sección sobre mi */
@@ -515,7 +559,7 @@ html {
 /*----------Formulario de contacto---------------*/
 .header-contacto {
     text-align: left;
-    text-shadow: #aaf4a4 1px 1px 2px;
+    
     margin: 30px;
 }
 .tech-card-formulario {
@@ -551,54 +595,11 @@ html {
     color: var(--color-taupe);
 }
 
-.campo-formulario input,
-.campo-formulario textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid rgba(43, 43, 43, 0.15);
-    border-radius: 10px;
-    background-color: var(--color-ocre);
-    color: var(--color-carbon);
-    font-family: inherit;
-    outline: none;
-    transition: 0.3s ease;
-}
 
-.campo-formulario input {
-    height: 48px;
-}
 
-.campo-formulario textarea {
-    min-height: 140px;
-    resize: vertical;
-}
 
-/* Cuando haces clic en el campo */
-.campo-formulario input:focus,
-.campo-formulario textarea:focus {
-    border-color: var(--color-mostaza);
-    box-shadow: 0 0 0 3px rgba(188, 219, 46, 0.15);
-}
 
-/* Placeholder */
-.campo-formulario input::placeholder,
-.campo-formulario textarea::placeholder {
-    color: var(--color-carbon);
-}
 
-/* Botón */
-.btn-enviar {
-    width: 100%;
-    padding: 13px;
-    border: none;
-    border-radius: 10px;
-    background-color: var(--color-taupe);
-    color: var(--color-crema);
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
 
 .btn-enviar:hover {
     transform: translateY(-2px);
@@ -606,9 +607,12 @@ html {
 }
 
 footer {
-    background-color: var(--color-crema);
-    padding: 20px 0;
+    background-color: var(--color-carbon);
+    padding: 25px 0;
     text-align: center;
-    color: var(--color-carbon);
-    font-size: 0.9rem;
+}
+
+footer p {
+    color: var(--color-crema);
+    margin: 0;
 }
